@@ -37,7 +37,7 @@ Since the web application established in Google Cloud incurs fees, I have termin
 # Reference: 
 The famous paper "Attention is All You Need" 
 # Thanks to: 
-1. Stack overflow help links on Cloud deployment such as https://stackoverflow.com/questions/65768595/gcloud-app-deploy-fails-cloud-build-did-not-succeed-within-10m; https://stackoverflow.com/questions/51025893/flask-at-first-run-do-not-use-the-development-server-in-a-production-environmen
-2. Transformer code instructions such as https://www.youtube.com/watch?v=U0s0f995w14;https://www.bilibili.com/video/BV1kT4y1b7us/?spm_id_from=333.337.search-card.all.click
+1. Stack overflow help links on Cloud deployment such as https://stackoverflow.com/questions/65768595/gcloud-app-deploy-fails-cloud-build-did-not-succeed-within-10m; https://stackoverflow.com/questions/51025893/flask-at-first-run-do-not-use-the-development-server-in-a-production-environmen etc.
+2. Transformer code instructions such as https://www.youtube.com/watch?v=U0s0f995w14; https://www.bilibili.com/video/BV1kT4y1b7us/?spm_id_from=333.337.search-card.all.click etc.
 
 
