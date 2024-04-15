@@ -1,13 +1,13 @@
 # Goal
 This project aims to build a text decoder by constructing the components, e.g. encoders, decoders, multihead attentions etc. of a transformer model to solve the a text decryption problem described in more details as follows. 
 # Problem Description
-Assume a collection of English texts is decoded by a one-to-one map or a permutation from the set of English alphabet, i.e. {a-z} to itself, with other none-letter symbols being unchanged. \n
+Assume a collection of English texts is decoded by a one-to-one map or a permutation from the set of English alphabet, i.e. {a-z} to itself, with other none-letter symbols being unchanged. <br />
 For example, {a,b,c,d,e,...,x,y,z} is decoded to {f,g,h,i,j,...,c,d,e}, i.e. each letter is moved forward with 5 positions, with the last few letters going back to the front. The original text "he is a boy" is then decoded to "mj nx f gtd". \n
-We will call the above example as "5-plus-shift" later on.\n
-Another example is {a,b,c,d,e,...} is decoded to {g,z,k,w,b,...} as long as every letter is decoded to a unique letter and no two letters share a same decoded image.
+We will call the above example as "5-plus-shift" later on.<br />
+Another example is {a,b,c,d,e,...} is decoded to {g,z,k,w,b,...} as long as every letter is decoded to a unique letter and no two letters share a same decoded image.<br />
 The task is to train a language model to find the decoding pattern so when prompted a masked text, say the "mj nx f gtd" example above, the model can translate it to "he is a boy"
 # Data
-Some English texts along with their "5-plus-shift" decoded texts as training sets and validation sets for the machine to learn. Test sets are from user inputs(see more on the App section). The data has been processed such that 1.each line of the text consists of at most 40 characters including letters and symbols; 2.all English letters are in lower-case.
+Some English texts along with their "5-plus-shift" decoded texts as training sets and validation sets for the machine to learn. Test sets are from user inputs(see more on the App section).<br /> The data has been processed such that 1.each line of the text consists of at most 40 characters including letters and symbols; <br />2.all English letters are in lower-case.
 # Model & Method
 Each component of the transformer model is written from scratch in the sense that the transformer model is not applications of pre-trained LLM models but it does rely on Pytorch for the construction of neural networks.
 The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format.  
