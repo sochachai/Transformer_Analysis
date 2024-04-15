@@ -13,24 +13,24 @@ Each component of the transformer model is written from scratch in the sense tha
 The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format.  
 The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters are all tokenized with the number 0.
 # App Deployment
-1.The app represents itself as a web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request. \n
-2.The app is hosted with App Engine in Google Cloud Platform which can be triggered using VMs.\n
-  To set this up, 
-  2.1. Store scripts main.py(the app run), language.py(the transformer code for which main.py will call), my_transformer_utils(a dependency package of language.py), the pickle file letter_decryption_core_v1.pkl(the model trained in Google Lab), app.yaml and requirements.txt(dependencies for Cloud App Build) into a Google Cloud Store Bucket
+#### 1.The app represents itself as a web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request.<br />
+#### 2.The app is hosted with App Engine in Google Cloud Platform which can be triggered using VMs.<br />
+  To set this up, <br />
+  2.1. Store scripts main.py(the app run), language.py(the transformer code for which main.py will call), my_transformer_utils(a dependency package of language.py), the pickle file letter_decryption_core_v1.pkl(the model trained in Google Lab), app.yaml and requirements.txt(dependencies for Cloud App Build) into a Google Cloud Store Bucket.<br />
   2.2. Select and open a VM instance with machine type:e2-custom-4-2048 or any other configuration with sufficient memory, disk space and compute power. The free configuration would not work in our case as the creator has tested.
-  2.3. SSH the VM and open a virtual environment in the SSH terminal with "python3 -m venv .venv"
-  2.4. Activate the virtual enviroment by typing "source .venv/bin/activate" in the SSH terminal and use "which python" for validation
-  2.5. Transport the project files described in Step 2.1 to the virtual environment described in Step 3
-  2.6. Install dependencies of this project in the virtual environment by typing "python3 -m pip install torch" etc. Use "python3 -m pip install --upgrade pip" to install "pip" if necessary
-  2.7. Test the model in SSH terminal with "Python3 language.py". If successed, the message "This is an apple." should display itself.
-  2.8. Type "gcloud auth login" and go to the prompted page to finish authorization process.
-  2.9. Go to IAM & ADMIN in Google Cloud Console to add the "...-compute@developer.gserviceaccount.com" as an APP ENGINE DEVELOPER
-  2.9. Type "gcloud config set app/cloud_build_timeout 7200s" to set a time-out limit for app deployment (note this is not a hello-world-level flask cloud app deployment)
-  2.10. Type "nano app.yaml" and "nano requirements.txt" to properly configure the cloud build settings (a low memory_gb/a low disk_size_gb in app.yaml or missing torch will result in early undesired termination of the app deployment)
-  2.11. Type "gcloud app deploy" for the app to deploy in Google Cloud. 
-  2.12. Wait for the app deployment process to finish then go to the URL provided in the SSH terminal to use the web app.
+  2.3. SSH the VM and open a virtual environment in the SSH terminal with "python3 -m venv .venv".<br />
+  2.4. Activate the virtual enviroment by typing "source .venv/bin/activate" in the SSH terminal and use "which python" for validation.<br />
+  2.5. Transport the project files described in Step 2.1 to the virtual environment described in Step 2.3. <br />
+  2.6. Install dependencies of this project in the virtual environment by typing "python3 -m pip install torch" etc. Use "python3 -m pip install --upgrade pip" to install "pip" if necessary. <br />
+  2.7. Test the model in SSH terminal with "Python3 language.py". If successed, the message "This is an apple." should display itself. <br />
+  2.8. Type "gcloud auth login" and go to the prompted page to finish authorization process. <br />
+  2.9. Go to IAM & ADMIN in Google Cloud Console to add the "...-compute@developer.gserviceaccount.com" as an APP ENGINE DEVELOPER.<br />
+  2.9. Type "gcloud config set app/cloud_build_timeout 7200s" to set a time-out limit for app deployment (note this is not a hello-world-level flask cloud app deployment).<br />
+  2.10. Type "nano app.yaml" and "nano requirements.txt" to properly configure the cloud build settings(a low memory_gb/a low disk_size_gb in app.yaml or missing torch will result in early undesired termination of the app deployment).<br />
+  2.11. Type "gcloud app deploy" for the app to deploy in Google Cloud. <br />
+  2.12. Wait for the app deployment process to finish then go to the URL provided in the SSH terminal to use the web app.<br />
 # Result
-3. The web app successfully finds the "5-plus-shift" pattern and can translate a masked text to its original English text.
+The web app successfully finds the "5-plus-shift" pattern and can translate a masked text to its original English text.
 Since the web application established in Google Cloud incurs fees, I have terminated the process but instead attached a few screen shots for result demonstrations.
   
   
