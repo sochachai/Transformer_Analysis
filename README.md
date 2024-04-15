@@ -20,7 +20,7 @@ The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters 
   2.2. Select and open a VM instance with machine type:e2-custom-4-2048 or any other configuration with sufficient memory, disk space and compute power. The free configuration would not work in our case as the creator has tested.
   2.3. SSH the VM and open a virtual environment in the SSH terminal with "python3 -m venv .venv".<br />
   2.4. Activate the virtual enviroment by typing "source .venv/bin/activate" in the SSH terminal and use "which python" for validation.<br />
-  2.5. Transport the project files described in Step 2.1 to the virtual environment described in Step 2.3. <br />
+  2.5. Transport the project files/folders described in Step 2.1 to the virtual environment described in Step 2.3 using commands "gsutil cp ..." or "gsutil cp -r". <br />
   2.6. Install dependencies of this project in the virtual environment by typing "python3 -m pip install torch" etc. Use "python3 -m pip install --upgrade pip" to install "pip" if necessary. <br />
   2.7. Test the model in SSH terminal with "Python3 language.py". If successed, the message "This is an apple." should display itself. <br />
   2.8. Type "gcloud auth login" and go to the prompted page to finish authorization process. <br />
