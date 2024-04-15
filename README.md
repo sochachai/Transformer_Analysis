@@ -9,9 +9,10 @@ The task is to train a language model to find the decoding pattern so when promp
 # Data
 Some English texts along with their "5-plus-shift" decoded texts as training sets and validation sets for the machine to learn. Test sets are from user inputs(see more on the App section).<br /> The data has been processed such that 1.each line of the text consists of at most 40 characters including letters and symbols; <br />2.all English letters are in lower-case.
 # Model & Method
-Each component of the transformer model is written from scratch in the sense that the transformer model is not applications of pre-trained LLM models but it does rely on Pytorch for the construction of neural networks.
-The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format.  
-The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters are all tokenized with the number 0.
+1.Each component of the transformer model is written from scratch in the sense that the transformer model is not applications of pre-trained LLM models but it does rely on Pytorch for the construction of neural networks.<br />
+2.The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format. <br />
+3.The trained model should be stored in the project as '~/models/letter_decryption_core_v1.pkl'. The pickle file exceeds the limit of storage permitted by Github and hence is not uploaded here. It can always be trained in a local machine or in google colab.
+4.The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters are all tokenized with the number 0.
 # App Deployment
 #### 1.The app represents itself as a web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request.<br />
 #### 2.The app is hosted with App Engine in Google Cloud Platform which can be triggered using VMs.<br />
