@@ -19,15 +19,15 @@ are uploaded to Github as there exists a storage/upload limit.<br />
 # Unit Test
 The components of the transformer model and some of their unit tests are given in the py scrypts stored in the folder "Components_of_Transformer". They are the building blocks of the script model_training.py and language.py
 # App Deployment
-#### 1.The app represents itself as a web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request.<br />
-#### 2.The app is hosted with App Engine in Google Cloud Platform which can be triggered using VMs.<br />
+#### 1.The app represents itself as a flask web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request.<br />
+#### 2.The flask app is hosted with App Engine in Google Cloud Platform which can be triggered in VMs.<br />
   To set this up, <br />
   2.1. Store scripts main.py(the app run), language.py(the transformer code for which main.py will call), my_transformer_utils(a dependency package of language.py), the pickle file letter_decryption_core_v1.pkl(the model trained in Google Lab), app.yaml and requirements.txt(dependencies for Cloud App Build) into a Google Cloud Store Bucket.<br />
-  2.2. Select and open a VM instance with machine type:e2-custom-4-2048 or any other configuration with sufficient memory, disk space and compute power. The free configuration would not work in our case as the creator has tested.
+  2.2. Select and open a VM instance with machine type:e2-custom-4-2048 or any other configuration with sufficient memory, disk space and compute power. The free configuration would not work in our case as the creator has tested.<br />
   2.3. SSH the VM and open a virtual environment in the SSH terminal with "python3 -m venv .venv".<br />
   2.4. Activate the virtual enviroment by typing "source .venv/bin/activate" in the SSH terminal and use "which python" for validation.<br />
   2.5. Transport the project files/folders described in Step 2.1 to the virtual environment described in Step 2.3 using commands "gsutil cp ..." or "gsutil cp -r". <br />
-  2.6. Install dependencies of this project in the virtual environment by typing "python3 -m pip install torch" etc. Use "python3 -m pip install --upgrade pip" to install "pip" if necessary. <br />
+  2.6. Install dependencies of this project in the virtual environment by typing "python3 -m pip install torch", "python3 -m pip install flask" etc. Use "python3 -m pip install --upgrade pip" to install "pip" if necessary. <br />
   2.7. Test the model in SSH terminal with "Python3 language.py". If successed, the message "This is an apple." should display itself. <br />
   2.8. Type "gcloud auth login" and go to the prompted page to finish authorization process. <br />
   2.9. Go to IAM & ADMIN in Google Cloud Console to add the "...-compute@developer.gserviceaccount.com" as an APP ENGINE DEVELOPER.<br />
