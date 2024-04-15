@@ -7,7 +7,10 @@ We will call the above example as "5-plus-shift" later on.<br />
 Another example is {a,b,c,d,e,...} is decoded to {g,z,k,w,b,...} as long as every letter is decoded to a unique letter and no two letters share a same decoded image.<br />
 The task is to train a language model to find the decoding pattern so when prompted a masked text, say the "mj nx f gtd" example above, the model can translate it to "he is a boy"
 # Data
-Some English texts along with their "5-plus-shift" decoded texts as training sets and validation sets for the machine to learn. Test sets are from user inputs(see more on the App section).<br /> The data has been processed such that 1.each line of the text consists of at most 40 characters including letters and symbols; <br />2.all English letters are in lower-case.
+Some English texts along with their "5-plus-shift" decoded texts as training sets and validation sets for the machine to learn. Test sets are from user inputs(see more on the App section).<br />
+The data has been processed such that 1.each line of the text consists of at most 40 characters including letters and symbols; 2.all English letters are in lower-case. <br />
+The data used for model training consists of about 100 texts of original documents and encrypted documents. Only a few samples
+are uploaded to Github as there exists a storage/upload limit.<br />
 # Model & Method
 1.Each component of the transformer model is written from scratch in the sense that the transformer model is not applications of pre-trained LLM models but it does rely on Pytorch for the construction of neural networks.<br />
 2.The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format. <br />
