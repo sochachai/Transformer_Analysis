@@ -37,7 +37,9 @@ The components of the transformer model and some of their unit tests are given i
   2.12. Wait for the app deployment process to finish then go to the URL provided in the SSH terminal to use the web app.<br />
 # Result
 The web app successfully finds the "5-plus-shift" pattern and can translate a masked text to its original English text.
-Since the web application established in Google Cloud incurs fees, I have terminated the process but instead attached a few screen shots for result demonstrations.
+Since the web application established in Google Cloud incurs fees, I have terminated the process but instead attached a few screen shots for result demonstrations.<br />
+1. Refer "Cloud_Deploy_Success.png" and "App_in_Cloud.png" to see the results deployed on cloud. <br />
+2. Refer "Local_Deploy_Success.png" and "App_in_Local.png" to see the results on a local machine.<br />
   
   
 # Reference: 
