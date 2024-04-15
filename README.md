@@ -13,9 +13,11 @@ The data used for model training consists of about 100 texts of original documen
 are uploaded to Github as there exists a storage/upload limit.<br />
 # Model & Method
 1.Each component of the transformer model is written from scratch in the sense that the transformer model is not applications of pre-trained LLM models but it does rely on Pytorch for the construction of neural networks.<br />
-2.The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format. <br />
+2.The model is trained with Google Colab. The trained model is saved in dictionary format which could be loaded in other Python environments, say on-premise local machines or VMs in Google Cloud Platform, using the same dictionary format. To load the pre-trained model, a model skeleton/object with an exact matching structure must be intialized. That's why we see duplicated blocks of code in model_training.py and language.py <br />
 3.The trained model should be stored in the project as '~/models/letter_decryption_core_v1.pkl'. The pickle file exceeds the limit of storage permitted by Github and hence is not uploaded here. It can always be trained in a local machine or in google colab.
-4.The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters are all tokenized with the number 0.
+4.The alphabet is tokenized with {1,2,...,26}. Other symbols that are not letters are all tokenized with the number 0. Note in a general large language model, each word instead of letter is given a token, resulting in a large vector space with a high dimension and hence requires much more compute resources. Words in a sentence are interconnected via multihead attention whereas in this project each letter is interconnected with each other in a sentence.
+# Unit Test
+The components of the transformer model and some of their unit tests are given in the py scrypts stored in the folder "Components_of_Transformer". They are the building blocks of the script model_training.py and language.py
 # App Deployment
 #### 1.The app represents itself as a web application where the user can enter one sentence of masked text and the web app will return the original English text upon the user's Submit request.<br />
 #### 2.The app is hosted with App Engine in Google Cloud Platform which can be triggered using VMs.<br />
