@@ -2,7 +2,7 @@
 This project aims to build a text decoder by constructing the components, e.g. encoders, decoders, multihead attentions etc. of a transformer model to solve the a text decryption problem described in more details as follows. 
 # Problem Description
 Assume a collection of English texts is decoded by a one-to-one map or a permutation from the set of English alphabet, i.e. {a-z} to itself, with other none-letter symbols being unchanged. <br />
-For example, {a,b,c,d,e,...,x,y,z} is decoded to {f,g,h,i,j,...,c,d,e}, i.e. each letter is moved forward with 5 positions, with the last few letters going back to the front. The original text "he is a boy" is then decoded to "mj nx f gtd". \n
+For example, {a,b,c,d,e,...,x,y,z} is decoded to {f,g,h,i,j,...,c,d,e}, i.e. each letter is moved forward with 5 positions, with the last few letters going back to the front. The original text "he is a boy" is then decoded to "mj nx f gtd". 
 We will call the above example as "5-plus-shift" later on.<br />
 Another example is {a,b,c,d,e,...} is decoded to {g,z,k,w,b,...} as long as every letter is decoded to a unique letter and no two letters share a same decoded image.<br />
 The task is to train a language model to find the decoding pattern so when prompted a masked text, say the "mj nx f gtd" example above, the model can translate it to "he is a boy"
