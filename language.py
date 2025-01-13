@@ -85,8 +85,9 @@ class PositionalEncoding(nn.Module):
         :return: x + the positional encoding
         '''
         # Shrink the size of pe to save storage
-        # by converting the second dimension, i.e. the dimension of max_len
-        # to the size of the sentence len of x, i.e. the second dimension of x
+        # x.size(1) is the numbers of words
+        # pe has dimension (0, max_len, d_model)
+        # since we only need to add the position vectors for each word in x, the first x.size(1) in the second dimension need to be recorded
         x = x + Variable(self.pe[:,:x.size(1)], requires_grad = False) # False: pe will not be updated
         return self.dropout(x)
 
